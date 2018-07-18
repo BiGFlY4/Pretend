@@ -12,10 +12,28 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var providerDelegate: ProviderDelegate?
+    var callInfo = CallInfo()
 
+    class var shared: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let fileMgr = FileManager.default
+        let dirPaths = fileMgr.urls(for: .documentDirectory, in: .userDomainMask)
+        if !fileMgr.fileExists(atPath: dirPaths[0].appendingPathComponent("Default.aif").path) {
+            let fromURL = Bundle.main.url(forResource: "Default", withExtension: "aif")
+            for destinationFile in ["Default.aif", "Custom 1.aif","Custom 2.aif","Custom 3.aif"] {
+                let toURL = dirPaths[0].appendingPathComponent(destinationFile)
+                do {
+                    try fileMgr.copyItem(at: fromURL!, to: toURL)
+                }
+                catch let error {
+                    print(error.localizedDescription)
+                }
+            }
+        }
         return true
     }
 
@@ -41,6 +59,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func displayIncomingCall(callInfo: CallInfo, completion: ((Error?) -> Void)? = nil) {
+        providerDelegate = ProviderDelegate(callInfo: callInfo)
+        providerDelegate?.reportIncomingCall(completion: completion)
+    }
+    
+    func endCall() {
+        providerDelegate?.endCall()
+    }
 }
 

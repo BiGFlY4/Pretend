@@ -14,6 +14,7 @@ struct CallInfo {
     var audioResource: String
     var delayMin: Int
     var delaySec: Int
+    var recordRecent: Bool
     
     init() {
         caller = CallInfo.randomNumGenerator()
@@ -21,6 +22,7 @@ struct CallInfo {
         audioResource = "Default.aif"
         delayMin = 0
         delaySec = 0
+        recordRecent = false
     }
     
     static func randomNumGenerator() -> String {

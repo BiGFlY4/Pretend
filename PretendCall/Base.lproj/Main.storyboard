@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4qO-wN-knp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K14-8y-dk9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,56 +12,65 @@
     </dependencies>
     <scenes>
         <!--News-->
-        <scene sceneID="dS6-1T-qy8">
+        <scene sceneID="NmC-4c-slH">
             <objects>
-                <viewController id="Ym9-LK-lgI" customClass="MainViewController" customModule="PretendCall" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jV1-Be-qS8">
+                <tableViewController id="2XM-4w-Bt7" customClass="MainTableViewController" customModule="PretendCall" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="g8s-BP-efK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <gestureRecognizers/>
-                        <viewLayoutGuide key="safeArea" id="5U1-Oa-RFz"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Kf8-M9-tCo">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kf8-M9-tCo" id="yh0-Mh-gU0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="pf8-6z-Pbv" appends="YES" id="Yzk-vK-vw6"/>
+                            <outlet property="dataSource" destination="2XM-4w-Bt7" id="hl2-Hy-yRG"/>
+                            <outlet property="delegate" destination="2XM-4w-Bt7" id="mqH-gL-CbU"/>
                         </connections>
-                    </view>
-                    <navigationItem key="navigationItem" title="News" id="HZs-6l-iGg">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="zXo-nD-i9s"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="News" id="Vl9-6I-vlO">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="6Xn-o9-dNd"/>
                         <leftBarButtonItems>
-                            <barButtonItem title="CallNow" id="YtW-IK-YrV">
+                            <barButtonItem title="CallNow" id="7zw-o9-9Hu">
                                 <connections>
-                                    <action selector="callNow:" destination="Ym9-LK-lgI" id="C0V-Vj-OrL"/>
+                                    <action selector="callNow:" destination="2XM-4w-Bt7" id="f1n-b4-OSh"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem enabled="NO" title="Cancel" id="iSi-bZ-FUY">
+                            <barButtonItem enabled="NO" title="Cancel" id="Dif-Zb-aYq">
                                 <connections>
-                                    <action selector="cancelButtonAction:" destination="Ym9-LK-lgI" id="hrw-Bw-3L1"/>
+                                    <action selector="cancelButtonAction:" destination="2XM-4w-Bt7" id="uWS-PG-yS5"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem enabled="NO" title="Stop" id="Z4Q-EZ-lOt">
+                            <barButtonItem enabled="NO" title="Stop" id="ziG-iK-7zH">
                                 <connections>
-                                    <action selector="stopCallButtonAction:" destination="Ym9-LK-lgI" id="Qi3-5i-vhP"/>
+                                    <action selector="stopCallButtonAction:" destination="2XM-4w-Bt7" id="n7l-eP-82n"/>
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" title="Setting" id="4BB-do-JY3">
+                        <barButtonItem key="rightBarButtonItem" title="Setting" id="SMS-Po-uxk">
                             <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
                             <connections>
-                                <segue destination="cNx-D5-bjg" kind="show" identifier="callSetting" id="nXZ-i3-ylW"/>
+                                <segue destination="cNx-D5-bjg" kind="show" identifier="callSetting" id="M0f-Aa-s2w"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="callNowButton" destination="YtW-IK-YrV" id="dFJ-tK-GqF"/>
-                        <outlet property="cancelButton" destination="iSi-bZ-FUY" id="anU-S5-mEm"/>
-                        <outlet property="naviBarItem" destination="HZs-6l-iGg" id="eAM-sc-RKp"/>
-                        <outlet property="settingButton" destination="4BB-do-JY3" id="ohp-yC-uCS"/>
-                        <outlet property="stopCallButton" destination="Z4Q-EZ-lOt" id="E5m-8R-ZAX"/>
+                        <outlet property="callNowButton" destination="7zw-o9-9Hu" id="dgE-cO-dPm"/>
+                        <outlet property="cancelButton" destination="Dif-Zb-aYq" id="p09-ky-jLi"/>
+                        <outlet property="naviBarItem" destination="Vl9-6I-vlO" id="yiD-T2-TYd"/>
+                        <outlet property="settingButton" destination="SMS-Po-uxk" id="ATi-v9-mxp"/>
+                        <outlet property="stopCallButton" destination="ziG-iK-7zH" id="pHp-pv-SJu"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="00T-bw-Pyx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TIW-I8-ZP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087.2" y="-53.523238380809602"/>
+            <point key="canvasLocation" x="1873" y="-54"/>
         </scene>
         <!--Setting-->
         <scene sceneID="KhZ-X3-9KH">
@@ -156,12 +165,33 @@
                                             <segue destination="Wcb-TD-dLQ" kind="show" identifier="delayinfo" id="pku-C4-Qo8"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="FUY-f8-EGN">
+                                        <rect key="frame" x="0.0" y="185" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FUY-f8-EGN" id="Iig-T1-IGa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bSM-wl-ol2">
+                                                    <rect key="frame" x="312" y="9" width="49" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Record in Recent Call" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zD-lm-MwB">
+                                                    <rect key="frame" x="16" y="14" width="182" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="a4m-Xa-auw">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="p8l-R3-RcY" style="IBUITableViewCellStyleDefault" id="v4c-JN-Bcr">
-                                        <rect key="frame" x="0.0" y="221" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="271" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v4c-JN-Bcr" id="TbI-Nu-M4W">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -196,11 +226,12 @@
                         <outlet property="audioResource" destination="fmx-2U-t2o" id="aVx-zT-O6g"/>
                         <outlet property="callerInfo" destination="2IP-qQ-CFq" id="JRK-WQ-xpq"/>
                         <outlet property="delayTime" destination="Cpm-pz-grh" id="eYE-BZ-GsD"/>
+                        <outlet property="recordRecentButton" destination="bSM-wl-ol2" id="tY6-p7-1kl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXa-Gb-bSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1981.5999999999999" y="-54.422788605697157"/>
+            <point key="canvasLocation" x="2920.8000000000002" y="-54.422788605697157"/>
         </scene>
         <!--Caller Info-->
         <scene sceneID="68v-sn-5Bg">
@@ -251,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w6D-gc-McS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2820" y="-895"/>
+            <point key="canvasLocation" x="3759.1999999999998" y="-895.50224887556226"/>
         </scene>
         <!--Audio-->
         <scene sceneID="cFg-kk-5uv">
@@ -377,7 +408,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nyb-Um-Bph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2820" y="-31"/>
+            <point key="canvasLocation" x="3759.1999999999998" y="-31.03448275862069"/>
         </scene>
         <!--Audio View Controller-->
         <scene sceneID="gm4-NG-eAR">
@@ -434,34 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zwy-3z-MqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3725.5999999999999" y="-31.03448275862069"/>
-        </scene>
-        <!--MainNB Controller-->
-        <scene sceneID="w0V-OK-8JY">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4qO-wN-knp" customClass="MainNBController" customModule="PretendCall" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6lh-pC-0Ex">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="pf8-6z-Pbv" appends="YES" id="d8a-59-lER"/>
-                        </connections>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Ym9-LK-lgI" kind="relationship" relationship="rootViewController" id="hjq-JB-8cQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JrX-9M-qyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="pf8-6z-Pbv">
-                    <connections>
-                        <action selector="tapMe:" destination="4qO-wN-knp" id="8vk-MM-ohU"/>
-                    </connections>
-                </tapGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="148" y="-53.523238380809602"/>
+            <point key="canvasLocation" x="4664.8000000000002" y="-31.03448275862069"/>
         </scene>
         <!--Delay-->
         <scene sceneID="KVO-rZ-APR">
@@ -485,7 +489,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUH-oR-exM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1981.5999999999999" y="675.11244377811101"/>
+            <point key="canvasLocation" x="3759" y="829"/>
+        </scene>
+        <!--Main Navi Controller-->
+        <scene sceneID="hkw-dP-Vvx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K14-8y-dk9" customClass="MainNaviController" customModule="PretendCall" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Oeg-lp-3fE">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="AbS-EL-kyV" appends="YES" id="Nlu-n7-GiZ"/>
+                        </connections>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2XM-4w-Bt7" kind="relationship" relationship="rootViewController" id="s0T-ZO-lVy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zkS-kD-NGS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="AbS-EL-kyV">
+                    <connections>
+                        <action selector="tapMe:" destination="K14-8y-dk9" id="lSy-ZF-ZcA"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="857" y="-54"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

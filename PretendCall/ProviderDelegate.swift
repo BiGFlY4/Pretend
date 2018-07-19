@@ -23,7 +23,7 @@ class ProviderDelegate: NSObject, CXProviderDelegate {
         audioIns = AudioSession(with: self.callInfo.audioResource)
         let config = CXProviderConfiguration(localizedName: callInfo.callerInfo)
         if #available(iOS 11.0, *) {
-            config.includesCallsInRecents = false
+            config.includesCallsInRecents = callInfo.recordRecent
         }
         config.supportsVideo = true;
         
@@ -41,7 +41,6 @@ class ProviderDelegate: NSObject, CXProviderDelegate {
         uuid = UUID()
         update.remoteHandle = CXHandle(type: .phoneNumber, value: callInfo.caller)
         update.hasVideo = false
-        print("what \(uuid!)")
         provider.reportNewIncomingCall(with: uuid!, update: update, completion: { error in
             completion?(error as NSError?)
         })

@@ -21,6 +21,7 @@ class SettingTVC: UITableViewController, CallInfoDelegate {
     @IBOutlet weak var callerInfo: UITableViewCell!
     @IBOutlet weak var audioResource: UITableViewCell!
     @IBOutlet weak var delayTime: UITableViewCell!
+    @IBOutlet weak var recordRecentButton: UISwitch!
     
     weak var callStructDelegate: CallStructDelegate?
     var callInfo: CallInfo?
@@ -49,6 +50,11 @@ class SettingTVC: UITableViewController, CallInfoDelegate {
         callerInfo.detailTextLabel?.text = (callInfo?.caller)! + ", " + (callInfo?.callerInfo)!
         audioResource.detailTextLabel?.text = callInfo?.audioResource.components(separatedBy:".")[0]
         delayTime.detailTextLabel?.text = String((callInfo?.delayMin)!) + "m " + String((callInfo?.delaySec)!) + "s"
+        recordRecentButton.isOn = (callInfo?.recordRecent)!
+    }
+    
+    @objc func recordRecentButtonChanged(_ sender: UISwitch) {
+        callInfo?.recordRecent = recordRecentButton.isOn
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,7 +81,8 @@ class SettingTVC: UITableViewController, CallInfoDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        recordRecentButton.addTarget(self, action: #selector(recordRecentButtonChanged), for: UIControlEvents.valueChanged)
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -96,7 +103,7 @@ class SettingTVC: UITableViewController, CallInfoDelegate {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 3
+            return 4
         }
         else if section == 1 {
             return 1

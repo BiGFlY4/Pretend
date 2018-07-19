@@ -11,10 +11,10 @@
 		5309029D20CD634D00881FAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5309029B20CD634D00881FAE /* Main.storyboard */; };
 		5309029F20CD635000881FAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5309029E20CD635000881FAE /* Assets.xcassets */; };
 		530902A220CD635000881FAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 530902A020CD635000881FAE /* LaunchScreen.storyboard */; };
-		530902AE20CD7C7200881FAE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530902AD20CD7C7200881FAE /* MainViewController.swift */; };
-		530902B020CD7D2C00881FAE /* MainNBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530902AF20CD7D2C00881FAE /* MainNBController.swift */; };
 		531A458520F2488900583DA2 /* icons8-settings-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 531A458420F2488900583DA2 /* icons8-settings-50.png */; };
 		534CE2D020CFED6C005015E6 /* CallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534CE2CF20CFED6C005015E6 /* CallInfo.swift */; };
+		536A06FC20FF9A31008460C3 /* MainNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A06FB20FF9A31008460C3 /* MainNaviController.swift */; };
+		536A06FE20FF9A52008460C3 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A06FD20FF9A52008460C3 /* MainTableViewController.swift */; };
 		5388E4AB20D1528D000F850A /* AudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5388E4AA20D1528D000F850A /* AudioSession.swift */; };
 		5388E4AD20D156E2000F850A /* Default.aif in Resources */ = {isa = PBXBuildFile; fileRef = 5388E4AC20D156E1000F850A /* Default.aif */; };
 		5388E4B420D2B491000F850A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5388E4B320D2B491000F850A /* SettingTableViewController.swift */; };
@@ -32,11 +32,11 @@
 		5309029E20CD635000881FAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		530902A120CD635000881FAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		530902A320CD635000881FAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		530902AD20CD7C7200881FAE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		530902AF20CD7D2C00881FAE /* MainNBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNBController.swift; sourceTree = "<group>"; };
 		531A458420F2488900583DA2 /* icons8-settings-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-settings-50.png"; path = "../../../../Downloads/icons8-settings-50.png"; sourceTree = "<group>"; };
 		534CE2CC20CEB17A005015E6 /* PretendCall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PretendCall.entitlements; sourceTree = "<group>"; };
 		534CE2CF20CFED6C005015E6 /* CallInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallInfo.swift; sourceTree = "<group>"; };
+		536A06FB20FF9A31008460C3 /* MainNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNaviController.swift; sourceTree = "<group>"; };
+		536A06FD20FF9A52008460C3 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		5388E4AA20D1528D000F850A /* AudioSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSession.swift; sourceTree = "<group>"; };
 		5388E4AC20D156E1000F850A /* Default.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Default.aif; sourceTree = "<group>"; };
 		5388E4B320D2B491000F850A /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
@@ -81,16 +81,16 @@
 				534CE2CC20CEB17A005015E6 /* PretendCall.entitlements */,
 				5309029720CD634D00881FAE /* AppDelegate.swift */,
 				5309029B20CD634D00881FAE /* Main.storyboard */,
+				536A06FB20FF9A31008460C3 /* MainNaviController.swift */,
+				536A06FD20FF9A52008460C3 /* MainTableViewController.swift */,
 				53ABE06120E522F700C85FF3 /* DelayViewController.swift */,
 				53DCE24120DAB1B700AC228D /* AudioTableViewController.swift */,
 				53DCE23F20DAAB8500AC228D /* AudioViewController.swift */,
 				5388E4B520D400AD000F850A /* CallerInfoViewController.swift */,
-				530902AD20CD7C7200881FAE /* MainViewController.swift */,
 				53DCE23D20D67AB500AC228D /* ProviderDelegate.swift */,
 				534CE2CF20CFED6C005015E6 /* CallInfo.swift */,
 				5388E4B220D2A962000F850A /* Ring */,
 				5388E4B020D2A93C000F850A /* Audio */,
-				530902AF20CD7D2C00881FAE /* MainNBController.swift */,
 				5309029E20CD635000881FAE /* Assets.xcassets */,
 				531A458420F2488900583DA2 /* icons8-settings-50.png */,
 				530902A020CD635000881FAE /* LaunchScreen.storyboard */,
@@ -197,14 +197,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5388E4B620D400AD000F850A /* CallerInfoViewController.swift in Sources */,
+				536A06FE20FF9A52008460C3 /* MainTableViewController.swift in Sources */,
 				5388E4B420D2B491000F850A /* SettingTableViewController.swift in Sources */,
 				53DCE24220DAB1B700AC228D /* AudioTableViewController.swift in Sources */,
-				530902B020CD7D2C00881FAE /* MainNBController.swift in Sources */,
 				5388E4AB20D1528D000F850A /* AudioSession.swift in Sources */,
 				53ABE06220E522F700C85FF3 /* DelayViewController.swift in Sources */,
+				536A06FC20FF9A31008460C3 /* MainNaviController.swift in Sources */,
 				534CE2D020CFED6C005015E6 /* CallInfo.swift in Sources */,
 				53DCE24020DAAB8500AC228D /* AudioViewController.swift in Sources */,
-				530902AE20CD7C7200881FAE /* MainViewController.swift in Sources */,
 				5309029820CD634D00881FAE /* AppDelegate.swift in Sources */,
 				53DCE23E20D67AB500AC228D /* ProviderDelegate.swift in Sources */,
 			);

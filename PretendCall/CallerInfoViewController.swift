@@ -8,12 +8,14 @@
 
 import UIKit
 
-class CallerInfoViewController: UIViewController, UITextFieldDelegate {
-    
+class CallerInfoViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate,UITableViewDataSource {
+
+    @IBOutlet weak var callerList: UITableView!
     @IBOutlet weak var caller: UITextField!
     @IBOutlet weak var subtitle: UITextField!
     weak var callInfoDelegate: CallInfoDelegate?
     var callInfo: CallInfo?
+    let callers = ["Dad", "Mum", "Darling", "Boss"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +26,39 @@ class CallerInfoViewController: UIViewController, UITextFieldDelegate {
         subtitle.delegate = self
         caller.text = callInfo?.caller
         subtitle.text = callInfo?.callerInfo
+        callerList.delegate = self
+        callerList.dataSource = self
+        callerList.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return callers.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "callerlist", for: indexPath)
+        cell.textLabel?.text = callers[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        caller.text = callers[indexPath.row]
+        callerList.isHidden = true
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField === caller {
+            callerList.isHidden = false
+        }
+        else {
+            callerList.isHidden = true
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

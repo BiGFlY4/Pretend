@@ -12,7 +12,6 @@ import AVFoundation
 class AudioSession {
     var player: AVAudioPlayer?
     var resource: String
-    
     init?(with resource: String = "Default.aif") {
         if resource == "None.aif" {
             return nil

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28089F016E1454651F6D98FD /* Pods_PretendCall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA82A3DB3E381424B70EF47F /* Pods_PretendCall.framework */; };
 		5309029820CD634D00881FAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309029720CD634D00881FAE /* AppDelegate.swift */; };
 		5309029D20CD634D00881FAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5309029B20CD634D00881FAE /* Main.storyboard */; };
 		5309029F20CD635000881FAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5309029E20CD635000881FAE /* Assets.xcassets */; };
@@ -23,6 +24,10 @@
 		53D0D3A32104B6DD00AD8C84 /* Setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D0D39F2104B6DC00AD8C84 /* Setting.png */; };
 		53D0D3A42104B6DD00AD8C84 /* Call.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D0D3A02104B6DD00AD8C84 /* Call.png */; };
 		53D0D3A52104B6DD00AD8C84 /* Stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D0D3A12104B6DD00AD8C84 /* Stop.png */; };
+		53D589E02107875E00EAE3AB /* Record.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D589DD2107875D00EAE3AB /* Record.png */; };
+		53D589E12107875E00EAE3AB /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D589DE2107875D00EAE3AB /* Play.png */; };
+		53D589E22107875E00EAE3AB /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D589DF2107875D00EAE3AB /* Pause.png */; };
+		53D589E421078B5C00EAE3AB /* Recording.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D589E321078B5B00EAE3AB /* Recording.png */; };
 		53DCE23E20D67AB500AC228D /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DCE23D20D67AB500AC228D /* ProviderDelegate.swift */; };
 		53DCE24020DAAB8500AC228D /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DCE23F20DAAB8500AC228D /* AudioViewController.swift */; };
 		53DCE24220DAB1B700AC228D /* AudioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DCE24120DAB1B700AC228D /* AudioTableViewController.swift */; };
@@ -48,9 +53,16 @@
 		53D0D39F2104B6DC00AD8C84 /* Setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Setting.png; sourceTree = "<group>"; };
 		53D0D3A02104B6DD00AD8C84 /* Call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Call.png; sourceTree = "<group>"; };
 		53D0D3A12104B6DD00AD8C84 /* Stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stop.png; sourceTree = "<group>"; };
+		53D589DD2107875D00EAE3AB /* Record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Record.png; sourceTree = "<group>"; };
+		53D589DE2107875D00EAE3AB /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
+		53D589DF2107875D00EAE3AB /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.png; sourceTree = "<group>"; };
+		53D589E321078B5B00EAE3AB /* Recording.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Recording.png; sourceTree = "<group>"; };
 		53DCE23D20D67AB500AC228D /* ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		53DCE23F20DAAB8500AC228D /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		53DCE24120DAB1B700AC228D /* AudioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTableViewController.swift; sourceTree = "<group>"; };
+		8DC80DDA71E16DF7D734CF80 /* Pods-PretendCall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PretendCall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PretendCall/Pods-PretendCall.debug.xcconfig"; sourceTree = "<group>"; };
+		99D9F5242889EDD8BBAB2D29 /* Pods-PretendCall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PretendCall.release.xcconfig"; path = "Pods/Target Support Files/Pods-PretendCall/Pods-PretendCall.release.xcconfig"; sourceTree = "<group>"; };
+		CA82A3DB3E381424B70EF47F /* Pods_PretendCall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PretendCall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,17 +70,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28089F016E1454651F6D98FD /* Pods_PretendCall.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		395FDD946CED2A7721B1D6F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DC80DDA71E16DF7D734CF80 /* Pods-PretendCall.debug.xcconfig */,
+				99D9F5242889EDD8BBAB2D29 /* Pods-PretendCall.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5309028B20CD634D00881FAE = {
 			isa = PBXGroup;
 			children = (
 				5309029620CD634D00881FAE /* PretendCall */,
 				5309029520CD634D00881FAE /* Products */,
+				395FDD946CED2A7721B1D6F4 /* Pods */,
+				61E38EC809872199A33B1E3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +132,10 @@
 		53476D762104B5C200DE6D32 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				53D589E321078B5B00EAE3AB /* Recording.png */,
+				53D589DF2107875D00EAE3AB /* Pause.png */,
+				53D589DE2107875D00EAE3AB /* Play.png */,
+				53D589DD2107875D00EAE3AB /* Record.png */,
 				53D0D3A02104B6DD00AD8C84 /* Call.png */,
 				53D0D39E2104B6DC00AD8C84 /* EndCall.png */,
 				53D0D39F2104B6DC00AD8C84 /* Setting.png */,
@@ -124,6 +152,14 @@
 			path = Ring;
 			sourceTree = "<group>";
 		};
+		61E38EC809872199A33B1E3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA82A3DB3E381424B70EF47F /* Pods_PretendCall.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 530902A620CD635000881FAE /* Build configuration list for PBXNativeTarget "PretendCall" */;
 			buildPhases = (
+				EAE75EC2E5B4AD1F39864296 /* [CP] Check Pods Manifest.lock */,
 				5309029020CD634D00881FAE /* Sources */,
 				5309029120CD634D00881FAE /* Frameworks */,
 				5309029220CD634D00881FAE /* Resources */,
+				05528111940B3B87EA44E240 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,17 +229,60 @@
 			buildActionMask = 2147483647;
 			files = (
 				5388E4AD20D156E2000F850A /* Default.aif in Resources */,
+				53D589E02107875E00EAE3AB /* Record.png in Resources */,
 				53D0D3A52104B6DD00AD8C84 /* Stop.png in Resources */,
 				530902A220CD635000881FAE /* LaunchScreen.storyboard in Resources */,
 				53D0D3A22104B6DD00AD8C84 /* EndCall.png in Resources */,
 				5309029F20CD635000881FAE /* Assets.xcassets in Resources */,
+				53D589E22107875E00EAE3AB /* Pause.png in Resources */,
 				53D0D3A32104B6DD00AD8C84 /* Setting.png in Resources */,
+				53D589E12107875E00EAE3AB /* Play.png in Resources */,
+				53D589E421078B5C00EAE3AB /* Recording.png in Resources */,
 				5309029D20CD634D00881FAE /* Main.storyboard in Resources */,
 				53D0D3A42104B6DD00AD8C84 /* Call.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05528111940B3B87EA44E240 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PretendCall/Pods-PretendCall-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftSiriWaveformView/SwiftSiriWaveformView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSiriWaveformView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PretendCall/Pods-PretendCall-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAE75EC2E5B4AD1F39864296 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PretendCall-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5309029020CD634D00881FAE /* Sources */ = {
@@ -360,6 +441,7 @@
 		};
 		530902A720CD635000881FAE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DC80DDA71E16DF7D734CF80 /* Pods-PretendCall.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -379,6 +461,7 @@
 		};
 		530902A820CD635000881FAE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99D9F5242889EDD8BBAB2D29 /* Pods-PretendCall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

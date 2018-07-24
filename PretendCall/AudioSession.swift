@@ -12,6 +12,7 @@ import AVFoundation
 class AudioSession {
     var player: AVAudioPlayer?
     var resource: String
+    
     init?(with resource: String = "Default.aif") {
         if resource == "None.aif" {
             return nil
@@ -30,14 +31,13 @@ class AudioSession {
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord)
             try AVAudioSession.sharedInstance().setMode(AVAudioSessionModeVoiceChat)
-            
             player = try AVAudioPlayer(contentsOf: soundFileURL)
         } catch let error {
             print("AudioSession error: " + error.localizedDescription)
         }
     }
     
-    func audioPlay() {
+    func audioPlay(isMeteringEnabled:Bool = false) {
         guard let player = player else { return }
         player.play()
     }

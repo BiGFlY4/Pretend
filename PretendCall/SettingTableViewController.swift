@@ -35,7 +35,7 @@ class SettingTVC: UITableViewController, CallInfoDelegate {
     }
     
     func setAudio(with audio: String) {
-        callInfo?.audioResource = audio + ".mp3"
+        callInfo?.audioResource = audio + ".aif"
     }
     
     func setDelayMin(min: Int) {

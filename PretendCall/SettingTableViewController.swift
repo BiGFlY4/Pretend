@@ -35,7 +35,7 @@ class SettingTVC: UITableViewController, CallInfoDelegate {
     }
     
     func setAudio(with audio: String) {
-        callInfo?.audioResource = audio + ".aif"
+        callInfo?.audioResource = audio + ".mp3"
     }
     
     func setDelayMin(min: Int) {
@@ -78,10 +78,15 @@ class SettingTVC: UITableViewController, CallInfoDelegate {
             secondViewController.callInfo = callInfo
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        recordRecentButton.addTarget(self, action: #selector(recordRecentButtonChanged), for: UIControlEvents.valueChanged)
+        if #available(iOS 11.0, *) {
+            recordRecentButton.addTarget(self, action: #selector(recordRecentButtonChanged), for: UIControlEvents.valueChanged)
+        }
+        else {
+            recordRecentButton.isEnabled = false
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

@@ -46,7 +46,7 @@ class AudioViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
     func createAudioRecorder() {
         let fileMgr = FileManager.default
         let dirPaths = fileMgr.urls(for: .documentDirectory, in: .userDomainMask)
-        soundFileURL = dirPaths[0].appendingPathComponent(sourceName! + ".aif")
+        soundFileURL = dirPaths[0].appendingPathComponent(sourceName! + ".mp3")
         
         let recordSettings =
             [AVEncoderAudioQualityKey: AVAudioQuality.min.rawValue,

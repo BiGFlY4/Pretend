@@ -22,6 +22,8 @@ class MainTableViewController: UITableViewController,CXCallObserverDelegate,Call
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var stopCallButton: UIBarButtonItem!
     @IBOutlet weak var segView: UIView!
+    @IBOutlet weak var segmentBar: UISegmentedControl!
+    @IBOutlet weak var noticeLabel: UILabel!
     weak var timer: Timer?
     var providerDelegate: ProviderDelegate?
     var callObserver: CXCallObserver?
@@ -30,11 +32,31 @@ class MainTableViewController: UITableViewController,CXCallObserverDelegate,Call
     var delay: Double?
     var callInfo = CallInfo()
     var naviBarDelayTitle = false
+    var blinkingTime = 3.0
+    
     
     @IBAction func callNow(_ sender: UIBarButtonItem) {
         let callInfoNow = CallInfo()
-        providerDelegate = ProviderDelegate(callInfo: callInfoNow)
-        providerDelegate?.reportIncomingCall() { error in }
+        settingButton.isEnabled = false
+        callNowButton.isEnabled = false
+        callNowButton.title = nil
+        callNowButton.image = nil
+        stopCallButton.title = nil
+        stopCallButton.image = nil
+        cancelButton.isEnabled = true
+        cancelButton.title = "Cancel"
+        cancelButton.image = UIImage(named: "Stop.png")
+        backgroundTaskIdentifier = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+        backgroundTask = DispatchWorkItem {
+            AppDelegate.shared.displayIncomingCall(callInfo: callInfoNow) { _ in
+                UIApplication.shared.endBackgroundTask(self.backgroundTaskIdentifier!)
+            }
+        }
+        DispatchQueue.main.asyncAfter(wallDeadline: DispatchWallTime.now() + 3, execute: backgroundTask!)
+        segmentBar.isHidden = true
+        noticeLabel.text = "Start in 3s, you may lock the screen now."
+        noticeLabel.isHidden = false
+        noticeLabel.startBlink()
     }
     
     @IBAction func cancelButtonAction(_ sender: UIBarButtonItem) {
@@ -47,12 +69,15 @@ class MainTableViewController: UITableViewController,CXCallObserverDelegate,Call
         settingButton.isEnabled = true
         callNowButton.isEnabled = true
         callNowButton.title = "CallNow"
-        callNowButton.image = UIImage(named: "Call.png")
+        callNowButton.image = UIImage(named: "NOW.png")
         cancelButton.isEnabled = false
         cancelButton.title = nil
         cancelButton.image = nil
         naviBarItem.title = "News Feed"
         timer?.invalidate()
+        segmentBar.isHidden = false
+        noticeLabel.isHidden = true
+        noticeLabel.stopBlink()
     }
     
     @IBAction func stopCallButtonAction(_ sender: UIBarButtonItem) {
@@ -71,6 +96,7 @@ class MainTableViewController: UITableViewController,CXCallObserverDelegate,Call
     }
     
     func startCall() {
+        blinkingTime = 3.0
         settingButton.isEnabled = false
         callNowButton.isEnabled = false
         callNowButton.title = nil
@@ -91,6 +117,10 @@ class MainTableViewController: UITableViewController,CXCallObserverDelegate,Call
         }
         DispatchQueue.main.asyncAfter(wallDeadline: DispatchWallTime.now() + TimeInterval(delay!), execute: backgroundTask!)
         timer = Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateDelayProgressView), userInfo: nil, repeats: true)
+        segmentBar.isHidden = true
+        noticeLabel.text = "You may lock the screen before it is triggered."
+        noticeLabel.isHidden = false
+        noticeLabel.startBlink()
     }
     
     @objc func updateDelayProgressView() {
@@ -101,6 +131,14 @@ class MainTableViewController: UITableViewController,CXCallObserverDelegate,Call
             naviBarItem.title = "TapMe"
         }
         delay! -= 0.2
+        
+        blinkingTime -= 0.2
+        if blinkingTime < 0.0 {
+            naviBarItem.title = "News Feed"
+            segmentBar.isHidden = false
+            noticeLabel.isHidden = true
+            noticeLabel.stopBlink()
+        }
     }
     
     func format(delay: Double) -> String {
@@ -121,7 +159,7 @@ class MainTableViewController: UITableViewController,CXCallObserverDelegate,Call
             settingButton.isEnabled = true
             callNowButton.isEnabled = true
             callNowButton.title = "CallNow"
-            callNowButton.image = UIImage(named: "Call.png")
+            callNowButton.image = UIImage(named: "NOW.png")
             timer?.invalidate()
             naviBarItem.title = "News Feed"
         }
@@ -138,6 +176,9 @@ class MainTableViewController: UITableViewController,CXCallObserverDelegate,Call
             self.stopCallButton.image = UIImage(named: "EndCall.png")
             timer?.invalidate()
             naviBarItem.title = "News Feed"
+            segmentBar.isHidden = false
+            noticeLabel.isHidden = true
+            noticeLabel.stopBlink()
         }
     }
     
@@ -151,6 +192,7 @@ class MainTableViewController: UITableViewController,CXCallObserverDelegate,Call
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        noticeLabel.isHidden = true
         segView.addBottomBorderWithColor(color: .groupTableViewBackground, width: 1)
         cancelButton.title = nil
         cancelButton.image = nil
@@ -251,5 +293,20 @@ extension UIView {
         border.backgroundColor = color.cgColor
         border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
         self.layer.addSublayer(border)
+    }
+}
+
+extension UILabel {
+    func startBlink() {
+        UIView.animate(withDuration: 0.8,
+                       delay:0.0,
+                       options:[.allowUserInteraction, .curveEaseInOut, .autoreverse, .repeat],
+                       animations: { self.alpha = 0 },
+                       completion: nil)
+    }
+    
+    func stopBlink() {
+        layer.removeAllAnimations()
+        alpha = 1
     }
 }

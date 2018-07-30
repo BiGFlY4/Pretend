@@ -26,7 +26,7 @@ class ProviderDelegate: NSObject, CXProviderDelegate {
             config.includesCallsInRecents = callInfo.recordRecent
         }
         config.supportsVideo = true;
-        
+        config.iconTemplateImageData = UIImagePNGRepresentation(UIImage(named: "Ellipsis.png")!)
         provider = CXProvider(configuration: config)
         super.init()
         provider.setDelegate(self, queue: nil)
@@ -48,7 +48,6 @@ class ProviderDelegate: NSObject, CXProviderDelegate {
     
     func endCall() {
         let controller = CXCallController()
-        print(uuid!)
         let endCallAction = CXEndCallAction(call: uuid!)
         let transaction = CXTransaction(action: endCallAction)
         controller.request(transaction) { error in

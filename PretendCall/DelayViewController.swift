@@ -14,6 +14,10 @@ class DelayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     weak var callInfoDelegate: CallInfoDelegate?
     var callInfo: CallInfo?
     
+    @IBAction func doneForDelay(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 4
     }

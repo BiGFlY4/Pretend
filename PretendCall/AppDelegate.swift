@@ -22,12 +22,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let fileMgr = FileManager.default
         let dirPaths = fileMgr.urls(for: .documentDirectory, in: .userDomainMask)
-        if !fileMgr.fileExists(atPath: dirPaths[0].appendingPathComponent("Default.aif").path) {
-            let fromURL = Bundle.main.url(forResource: "Default", withExtension: "aif")
-            for destinationFile in ["Default.aif", "Custom 1.aif","Custom 2.aif","Custom 3.aif"] {
+        if !fileMgr.fileExists(atPath: dirPaths[0].appendingPathComponent("Default.mp3").path) {
+            let fromURLDefault = Bundle.main.url(forResource: "Default", withExtension: "mp3")
+            let fromURLCustom = Bundle.main.url(forResource: "Custom", withExtension: "mp3")
+            let toURLDefault = dirPaths[0].appendingPathComponent("Default.mp3")
+            do {
+                try fileMgr.copyItem(at: fromURLDefault!, to: toURLDefault)
+            }
+            catch let error {
+                print(error.localizedDescription)
+            }
+            for destinationFile in ["Custom 1.mp3","Custom 2.mp3","Custom 3.mp3"] {
                 let toURL = dirPaths[0].appendingPathComponent(destinationFile)
                 do {
-                    try fileMgr.copyItem(at: fromURL!, to: toURL)
+                    try fileMgr.copyItem(at: fromURLCustom!, to: toURL)
                 }
                 catch let error {
                     print(error.localizedDescription)

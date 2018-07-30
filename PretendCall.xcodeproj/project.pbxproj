@@ -12,13 +12,16 @@
 		5309029D20CD634D00881FAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5309029B20CD634D00881FAE /* Main.storyboard */; };
 		5309029F20CD635000881FAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5309029E20CD635000881FAE /* Assets.xcassets */; };
 		530902A220CD635000881FAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 530902A020CD635000881FAE /* LaunchScreen.storyboard */; };
+		531EEE56210F683A003CD6F5 /* App.png in Resources */ = {isa = PBXBuildFile; fileRef = 531EEE55210F683A003CD6F5 /* App.png */; };
+		533F6F0D210F64E50030D1B3 /* Custom.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 533F6F0C210F64E40030D1B3 /* Custom.mp3 */; };
 		534CE2D020CFED6C005015E6 /* CallInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534CE2CF20CFED6C005015E6 /* CallInfo.swift */; };
 		536A06FC20FF9A31008460C3 /* MainNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A06FB20FF9A31008460C3 /* MainNaviController.swift */; };
 		536A06FE20FF9A52008460C3 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A06FD20FF9A52008460C3 /* MainTableViewController.swift */; };
 		5388E4AB20D1528D000F850A /* AudioSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5388E4AA20D1528D000F850A /* AudioSession.swift */; };
-		5388E4AD20D156E2000F850A /* Default.aif in Resources */ = {isa = PBXBuildFile; fileRef = 5388E4AC20D156E1000F850A /* Default.aif */; };
 		5388E4B420D2B491000F850A /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5388E4B320D2B491000F850A /* SettingTableViewController.swift */; };
 		5388E4B620D400AD000F850A /* CallerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5388E4B520D400AD000F850A /* CallerInfoViewController.swift */; };
+		53A530DE2108E681008CC785 /* NOW.png in Resources */ = {isa = PBXBuildFile; fileRef = 53A530DD2108E681008CC785 /* NOW.png */; };
+		53A530E2210A3EDF008CC785 /* Default.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 53A530E1210A3EDF008CC785 /* Default.mp3 */; };
 		53ABE06220E522F700C85FF3 /* DelayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ABE06120E522F700C85FF3 /* DelayViewController.swift */; };
 		53D0D3A22104B6DD00AD8C84 /* EndCall.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D0D39E2104B6DC00AD8C84 /* EndCall.png */; };
 		53D0D3A32104B6DD00AD8C84 /* Setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D0D39F2104B6DC00AD8C84 /* Setting.png */; };
@@ -28,6 +31,7 @@
 		53D589E12107875E00EAE3AB /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D589DE2107875D00EAE3AB /* Play.png */; };
 		53D589E22107875E00EAE3AB /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D589DF2107875D00EAE3AB /* Pause.png */; };
 		53D589E421078B5C00EAE3AB /* Recording.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D589E321078B5B00EAE3AB /* Recording.png */; };
+		53D589E62107913100EAE3AB /* Ellipsis.png in Resources */ = {isa = PBXBuildFile; fileRef = 53D589E52107913000EAE3AB /* Ellipsis.png */; };
 		53DCE23E20D67AB500AC228D /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DCE23D20D67AB500AC228D /* ProviderDelegate.swift */; };
 		53DCE24020DAAB8500AC228D /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DCE23F20DAAB8500AC228D /* AudioViewController.swift */; };
 		53DCE24220DAB1B700AC228D /* AudioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DCE24120DAB1B700AC228D /* AudioTableViewController.swift */; };
@@ -40,14 +44,17 @@
 		5309029E20CD635000881FAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		530902A120CD635000881FAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		530902A320CD635000881FAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		531EEE55210F683A003CD6F5 /* App.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = App.png; sourceTree = "<group>"; };
+		533F6F0C210F64E40030D1B3 /* Custom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Custom.mp3; sourceTree = "<group>"; };
 		534CE2CC20CEB17A005015E6 /* PretendCall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PretendCall.entitlements; sourceTree = "<group>"; };
 		534CE2CF20CFED6C005015E6 /* CallInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallInfo.swift; sourceTree = "<group>"; };
 		536A06FB20FF9A31008460C3 /* MainNaviController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNaviController.swift; sourceTree = "<group>"; };
 		536A06FD20FF9A52008460C3 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		5388E4AA20D1528D000F850A /* AudioSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSession.swift; sourceTree = "<group>"; };
-		5388E4AC20D156E1000F850A /* Default.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Default.aif; sourceTree = "<group>"; };
 		5388E4B320D2B491000F850A /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		5388E4B520D400AD000F850A /* CallerInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallerInfoViewController.swift; sourceTree = "<group>"; };
+		53A530DD2108E681008CC785 /* NOW.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NOW.png; sourceTree = "<group>"; };
+		53A530E1210A3EDF008CC785 /* Default.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Default.mp3; sourceTree = "<group>"; };
 		53ABE06120E522F700C85FF3 /* DelayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayViewController.swift; sourceTree = "<group>"; };
 		53D0D39E2104B6DC00AD8C84 /* EndCall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EndCall.png; sourceTree = "<group>"; };
 		53D0D39F2104B6DC00AD8C84 /* Setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Setting.png; sourceTree = "<group>"; };
@@ -57,6 +64,7 @@
 		53D589DE2107875D00EAE3AB /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
 		53D589DF2107875D00EAE3AB /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.png; sourceTree = "<group>"; };
 		53D589E321078B5B00EAE3AB /* Recording.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Recording.png; sourceTree = "<group>"; };
+		53D589E52107913000EAE3AB /* Ellipsis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ellipsis.png; sourceTree = "<group>"; };
 		53DCE23D20D67AB500AC228D /* ProviderDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		53DCE23F20DAAB8500AC228D /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		53DCE24120DAB1B700AC228D /* AudioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTableViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +140,9 @@
 		53476D762104B5C200DE6D32 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				531EEE55210F683A003CD6F5 /* App.png */,
+				53A530DD2108E681008CC785 /* NOW.png */,
+				53D589E52107913000EAE3AB /* Ellipsis.png */,
 				53D589E321078B5B00EAE3AB /* Recording.png */,
 				53D589DF2107875D00EAE3AB /* Pause.png */,
 				53D589DE2107875D00EAE3AB /* Play.png */,
@@ -147,7 +158,8 @@
 		5388E4B220D2A962000F850A /* Ring */ = {
 			isa = PBXGroup;
 			children = (
-				5388E4AC20D156E1000F850A /* Default.aif */,
+				533F6F0C210F64E40030D1B3 /* Custom.mp3 */,
+				53A530E1210A3EDF008CC785 /* Default.mp3 */,
 			);
 			path = Ring;
 			sourceTree = "<group>";
@@ -228,17 +240,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5388E4AD20D156E2000F850A /* Default.aif in Resources */,
+				53D589E62107913100EAE3AB /* Ellipsis.png in Resources */,
 				53D589E02107875E00EAE3AB /* Record.png in Resources */,
 				53D0D3A52104B6DD00AD8C84 /* Stop.png in Resources */,
+				53A530E2210A3EDF008CC785 /* Default.mp3 in Resources */,
 				530902A220CD635000881FAE /* LaunchScreen.storyboard in Resources */,
 				53D0D3A22104B6DD00AD8C84 /* EndCall.png in Resources */,
 				5309029F20CD635000881FAE /* Assets.xcassets in Resources */,
 				53D589E22107875E00EAE3AB /* Pause.png in Resources */,
 				53D0D3A32104B6DD00AD8C84 /* Setting.png in Resources */,
+				533F6F0D210F64E50030D1B3 /* Custom.mp3 in Resources */,
 				53D589E12107875E00EAE3AB /* Play.png in Resources */,
+				531EEE56210F683A003CD6F5 /* App.png in Resources */,
 				53D589E421078B5C00EAE3AB /* Recording.png in Resources */,
 				5309029D20CD634D00881FAE /* Main.storyboard in Resources */,
+				53A530DE2108E681008CC785 /* NOW.png in Resources */,
 				53D0D3A42104B6DD00AD8C84 /* Call.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

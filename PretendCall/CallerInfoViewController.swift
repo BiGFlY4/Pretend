@@ -2,7 +2,7 @@
 //  CallerInfoViewController.swift
 //  PretendCall
 //
-//  Created by 孟颖 李 on 2018/6/15.
+//  Created by Jifei sui on 2018/6/15.
 //  Copyright © 2018年 Jifei sui. All rights reserved.
 //
 
@@ -33,7 +33,6 @@ class CallerInfoViewController: UIViewController, UITextFieldDelegate, UITableVi
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,17 +85,6 @@ class CallerInfoViewController: UIViewController, UITextFieldDelegate, UITableVi
         caller.endEditing(false)
         subtitle.endEditing(false)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension UITextField {

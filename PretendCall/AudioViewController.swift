@@ -2,7 +2,7 @@
 //  AudioViewController.swift
 //  PretendCall
 //
-//  Created by 孟颖 李 on 2018/6/20.
+//  Created by Jifei sui on 2018/6/20.
 //  Copyright © 2018年 Jifei sui. All rights reserved.
 //
 
@@ -69,17 +69,14 @@ class AudioViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
         timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(updateAudioRecordProgressView), userInfo: nil, repeats: true)
         audioRecorder?.record()
         play.isEnabled = false
-        //sender.setImage(UIImage(named: "Recording.png"), for: .normal)
     }
     
     @IBAction func holdRecordTouchUp(_ sender: UIButton) {
         audioRecorder?.stop()
-        //sender.setImage(UIImage(named: "Record.png"), for: .normal)
     }
     
     @IBAction func holdRecordTouchUpOutside(_ sender: UIButton) {
         audioRecorder?.stop()
-        //sender.setImage(UIImage(named: "Record.png"), for: .normal)
     }
     
     @IBAction func playAudio(_ sender: UIButton) {
@@ -157,15 +154,4 @@ class AudioViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecor
     func audioRecorderEncodeErrorDidOccur(_ recorder: AVAudioRecorder, error: Error?) {
         print("Audio Record Encode Error")
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

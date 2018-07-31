@@ -2,7 +2,7 @@
 //  CallInfo.swift
 //  PretendCall
 //
-//  Created by 孟颖 李 on 2018/6/12.
+//  Created by Jifei sui on 2018/6/12.
 //  Copyright © 2018年 Jifei sui. All rights reserved.
 //
 

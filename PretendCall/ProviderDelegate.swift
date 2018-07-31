@@ -2,7 +2,7 @@
 //  ProviderDelegate.swift
 //  PretendCall
 //
-//  Created by 孟颖 李 on 2018/6/17.
+//  Created by Jifei sui on 2018/6/17.
 //  Copyright © 2018年 Jifei sui. All rights reserved.
 //
 

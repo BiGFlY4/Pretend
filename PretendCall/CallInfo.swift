@@ -19,7 +19,7 @@ struct CallInfo {
     init() {
         caller = CallInfo.randomNumGenerator()
         callerInfo = "VoIP"
-        audioResource = "Default.mp3"
+        audioResource = "Default.aif"
         delayMin = 0
         delaySec = 5
         recordRecent = false

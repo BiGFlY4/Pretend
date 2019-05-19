@@ -2,7 +2,7 @@
 //  DelayViewController.swift
 //  PretendCall
 //
-//  Created by 孟颖 李 on 2018/6/28.
+//  Created by Jifei sui on 2018/6/28.
 //  Copyright © 2018年 Jifei sui. All rights reserved.
 //
 
@@ -79,12 +79,10 @@ class DelayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         delayPicker.dataSource = self
         delayPicker.selectRow((callInfo?.delayMin)!, inComponent:0, animated:true)
         delayPicker.selectRow((callInfo?.delaySec)!, inComponent:2, animated:true)
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -92,15 +90,4 @@ class DelayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         callInfoDelegate?.setDelayMin(min: delayPicker.selectedRow(inComponent: 0))
         callInfoDelegate?.setDelaySec(sec: delayPicker.selectedRow(inComponent: 2))
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

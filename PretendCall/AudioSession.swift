@@ -13,8 +13,8 @@ class AudioSession {
     var player: AVAudioPlayer?
     var resource: String
     
-    init?(with resource: String = "Default.mp3") {
-        if resource == "None.mp3" {
+    init?(with resource: String = "Default.aif") {
+        if resource == "None.aif" {
             return nil
         }
         else {

@@ -25,7 +25,7 @@ class ProviderDelegate: NSObject, CXProviderDelegate {
         if #available(iOS 11.0, *) {
             config.includesCallsInRecents = callInfo.recordRecent
         }
-        config.supportsVideo = true;
+        config.supportsVideo = true
         config.iconTemplateImageData = UIImagePNGRepresentation(UIImage(named: "Ellipsis.png")!)
         provider = CXProvider(configuration: config)
         super.init()
@@ -41,6 +41,9 @@ class ProviderDelegate: NSObject, CXProviderDelegate {
         uuid = UUID()
         update.remoteHandle = CXHandle(type: .phoneNumber, value: callInfo.caller)
         update.hasVideo = false
+        if Int(callInfo.caller) == nil {
+            update.localizedCallerName = callInfo.caller
+        }
         provider.reportNewIncomingCall(with: uuid!, update: update, completion: { error in
             completion?(error as NSError?)
         })

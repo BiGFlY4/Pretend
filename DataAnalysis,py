@@ -1,0 +1,111 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+import statsmodels as sm
+import functools 
+import collections
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+
+from pylab import mpl
+mpl.rcParams['font.sans-serif'] = ['SimHei']
+
+path = r'top250.csv'
+
+csv_content = df = pd.read_csv('top250.csv',sep=',')
+
+#
+# pre - processing
+#
+
+# raw - format: (string)'<list>'
+df_tmp = df[['director', 'scriptwriter', 'actor', 'type', 'pub_dates', 'pub_location', 'rating_rank', 'better_than', 'tags']]
+df[['director', 'scriptwriter', 'actor', 'type', 'pub_dates', 'pub_location', 'rating_rank', 'better_than', 'tags']] = df_tmp.applymap(lambda x: eval(x))
+
+
+# raw - format: "<num> + <string>"
+df['score_cnt'] = df['score_cnt'].map(lambda x: int(x[:-3]))
+
+
+# raw - format: [<date1>, <date2>] => <date>
+df['pub_dates'] = df['pub_dates'].map(lambda x: [int(i) for i in x])
+df['pub_dates'] = df['pub_dates'].map(lambda x: min(x))
+
+# raw - format: [<better_than>%<string>, <better_than>%<string>] => <better_than>
+df['better_than'] = df['better_than'].map(lambda x: sum([int(i.split('%')[0]) for i in x])/len(x))
+
+df['actor'] = df['actor'].map(lambda x: [i.strip() for i in x])
+actors = functools.reduce(lambda x, y: x + y, df.actor)
+
+actor_cnt = collections.Counter(actors)
+#print(actor_cnt)
+actor_cnt = sorted(actor_cnt.items(), key=lambda x: x[1], reverse=True)
+#print(actor_cnt)
+top_actor = list(filter(lambda x: x[1] >= 5, actor_cnt))
+print(top_actor)
+
+top_actor_name = [i[0] for i in top_actor]
+top_actor_cnt = [i[1] for i in top_actor]
+#print(top_actor_name)
+#print(top_actor_cnt)
+
+figure, axis = plt.subplots(figsize=(20, 10))
+plt.bar(top_actor_name, top_actor_cnt, color='g')
+plt.ylabel('Movie Count', fontsize=20)
+plt.title('Top Actor List', fontsize=24)
+axis.set_xticklabels(labels=top_actor_name, 
+                   fontdict={
+                       'verticalalignment': 'bottom', 
+                       'y': 0.1, 
+                       'fontsize': 23, 
+                       'rotation': 'vertical'
+                   })
+
+df.score.hist(bins=20, color='green')
+plt.title('Rating')
+
+df.score_cnt.hist(bins=20, color='green')
+plt.title('Rating Number')
+
+print(df.type)
+
+# tag types
+types = functools.reduce(lambda x, y: x + y, df.type)
+type_cnt = collections.Counter(types)
+type_cnt = sorted(type_cnt.items(), key=lambda x: x[1], reverse=True)
+type_list = [i[0] for i in type_cnt]
+type_cnts = [i[1] for i in type_cnt]
+
+figure, axis = plt.subplots(figsize=(20, 10))
+axis.bar(type_list[1:], type_cnts[1:], color='g')
+axis.set_xticklabels(
+    labels = type_list[1:],
+    fontdict={
+        'rotation': 'vertical',
+        'fontsize': 23
+    })
+plt.title('Movie Tag Popularity', fontsize=24)
+
+# Correlation
+df.corr()
+
+figure, axis = plt.subplots(figsize=(20, 10))
+sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
+plt.show()
+
+# Linear Regression for 'seen' and 'score_cnt'
+lr = LinearRegression(fit_intercept=True)
+X = df['score_cnt'].values
+y = df['seen'].values
+X.shape = (len(X), 1)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y)
+
+lr.fit(X_train, y_train)
+
+y_pred = lr.predict(X_test)
+
+plt.scatter(X_test, y_test, color='red', marker='+')
+plt.plot(X_test, y_pred, '-', color='green')
+plt.show()
